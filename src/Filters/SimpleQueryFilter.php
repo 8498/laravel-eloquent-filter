@@ -2,7 +2,7 @@
 
 namespace Mnabialek\LaravelEloquentFilter\Filters;
 
-use Illuminate\Contracts\Container\Container;
+use Illuminate\Container\Container;
 use Illuminate\Support\Collection;
 use Mnabialek\LaravelEloquentFilter\Parsers\SimpleQueryParser;
 
