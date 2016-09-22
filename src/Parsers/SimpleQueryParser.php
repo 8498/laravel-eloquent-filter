@@ -70,7 +70,7 @@ class SimpleQueryParser implements InputParser
         $input = $this->collection->make(
             $this->request->except($this->sortName));
 
-        $filters = $this->collection->make();
+        $filters = $this->collection->make([]);
 
         $input->filter(function ($value) {
             if ($this->ignoreEmptyFilters && is_string($value) &&
@@ -103,7 +103,7 @@ class SimpleQueryParser implements InputParser
             is_array($sortInput) ? $sortInput :
                 explode($this->sortFieldsSeparator, $sortInput));
 
-        $sorts = $this->collection->make();
+        $sorts = $this->collection->make([]);
 
         $sortFields->each(function ($field) use ($sorts) {
             $s = new Sort();
