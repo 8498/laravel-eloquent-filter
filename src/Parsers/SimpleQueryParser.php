@@ -80,12 +80,14 @@ class SimpleQueryParser implements InputParser
             }
 
             return true;
-        })->each(function ($value, $field) use ($filters) {
-            $filter = new Filter();
-            $filter->setField($field);
-            $filter->setValue($value);
-            $filters->push($filter);
         });
+
+        foreach ($input->all() as $key => $val) {
+            $filter = new Filter();
+            $filter->setField($key);
+            $filter->setValue($val);
+            $filters->push($filter);
+        }
 
         return $filters;
     }
