@@ -82,8 +82,8 @@ abstract class QueryFilter implements QueryFilterContract
         $this->collection = $collection;
         $this->filters = $parser->getFilters();
         $this->sorts = $parser->getSorts();
-        $this->appliedFilters = $collection->make();
-        $this->appliedSorts = $collection->make();
+        $this->appliedFilters = $collection->make([]);
+        $this->appliedSorts = $collection->make([]);
         $this->app = $app;
     }
 
